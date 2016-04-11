@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1>Github repos</h1>
+  <div class="form-group">
+    <input type="text" name="repo" ng-model="ctrl.newRepo" class="form-control">
+    <button ng-click="ctrl.getUserInfo()" class="btn btn-primary">Get User Info</button>
+  </div>
+
+  <div ng-if="ctrl.error != ''" class="alert alert-warning">
+    {{ctrl.error}}
+  </div>
+  <ul ng-if="ctrl.error == ''" class="list-group">
+    <li class="list-group-item" ng-repeat="repo in ctrl.repositories">
+      <a href="{{repo.url}}">{{repo.name}}</a>
+    </li>
+  </ul>
+</div>
